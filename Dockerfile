@@ -35,7 +35,7 @@ RUN conda install -y -c conda-forge mamba && \
 # --- Directorio de trabajo
 WORKDIR /inputs
     # --- Base de datos
-RUN metaphlan --install --index mpa_v30_CHOCOPhlAn_201901 --bowtie2db inputs/ref/metaphlan
+RUN metaphlan --install --index mpa_v30_CHOCOPhlAn_201901 --bowtie2db ref/metaphlan
 
 
 # --- Por defecto: bash ---

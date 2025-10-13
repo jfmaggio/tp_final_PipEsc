@@ -154,7 +154,7 @@ cd ..
     ```
     3. **Correr el pipeline.**
     ```
-    nextflow run main.nf -with-docker cont_microbiota -process.maxForks 1
+     nextflow run main.nf --metaphlan_db_path "/inputs/ref/metaphlan" -with-docker cont_microbiota -process.maxForks 1
     ```
 3. **OPCIÓN C:** **Contendor Docker para cada proceso.** Tiene que tener instalado Docker.
     1. **Crear imagenes para cada proceso.**
