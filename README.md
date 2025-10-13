@@ -98,3 +98,62 @@ Se ejecutará la prueba usando los parámetros por defecto cuyos set de datos se
 
 1. **Clonar repositorio**
 
+```
+git clone https://github.com/jfmaggio/tp_final_PipEsc.git
+```
+```
+cd tp_final_PipEsc/
+```
+2. **Descarga de los indices de Bowtie para humano.** En este caso se descargará unos en particular, se puede usar el que desee el usuario. 
+```
+mkdir inputs/ref/ #Crea directorio donde se guardaran los índices
+```
+```
+cd inputs/ref/
+```
+```
+wget https://genome-idx.s3.amazonaws.com/bt/GRCh38_noalt_as.zip
+```
+Este paso demora
+```
+unzip GRCh38_noalt_as.zip
+```
+```
+cd ..
+```
+```
+cd ..
+```
+
+3. **OPCIÓN A:** **Entorno Mamba (tiene que tener instalado mamba).**
+   1.  **Crear entorno.** Demora un tiempo ya que descarga la base de datos MetaPhlAn3. 
+   ```
+   mamba create -n microbiota_env -f microbiota_env.yml
+   ```
+   2. **Activar el entorno.**
+   ```
+    mamba activate microbiota_env
+   ```
+   3. **Crear los indices MetaPhlAn3.** Este proceso demora.
+   ```
+   metaphlan --install --index mpa_v30_CHOCOPhlAn_201901 --bowtie2db inputs/ref/metaphlan
+   ```
+   3. **Correr el pipeline.** Es muy probable que se necesite usar el flag `-process.maxForks 1` si se trabaja en una pc, ya que Bowtie corta la ejecución si supera determinado consumo de recursos, de esta manera se encadena un proceso detras del otro.  
+   ```
+   nextflow run main.nf -process.maxForks 1
+   ```
+   Una **opción alternativa** y mas directa, sin activar el entorno con `mamba activate microbiota_env`, es: 
+
+   ```
+   mamba run -n microbiota_env nextflow run main.nf -process.maxForks 1
+   ```
+3. **OPCIÓN B:** **Contendor Docker (tiene que tener instalado Docker)**
+    1. **Abrir Docker Desktop.**
+    2. **Crear la imagen Docker.**
+    ```
+    docker build . -t cont_microbiota -f Dockerfile
+    ```
+    3. **Correr el pipeline.**
+    ```
+    nextflow run main.nf -with-docker cont_microbiota -process.maxForks 1
+    ```
