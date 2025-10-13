@@ -1,0 +1,10 @@
+Directorios de Nextflow
+.nextflow/
+work/
+results*/
+**.log**
+inputs/db
+inputs/ref
+opt/db/metaphlan
+main_viejo*
+inputs/test/**:Zone
