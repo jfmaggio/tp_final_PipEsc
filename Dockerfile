@@ -33,7 +33,7 @@ RUN conda install -y -c conda-forge mamba && \
     conda clean -afy
 
 # --- Base de dato
-RUN metaphlan --install --index mpa_v30_CHOCOPhlAn_201901 --bowtie2db /opt/db/metaphlan
+RUN metaphlan --install --index mpa_v30_CHOCOPhlAn_201901 --bowtie2db inputs/ref/metaphlan
 
 # --- Directorio de trabajo
 WORKDIR /data
