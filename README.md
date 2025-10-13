@@ -10,7 +10,7 @@ Integra tres etapas principales: control de calidad de lecturas, eliminación de
 El pipeline ejecuta los siguientes módulos:
 
 ### 🔹 1. FILTRADO_QC
-- Realiza control de calidad y filtrado de las lecturas crudas usando **Trim Galore!**.  
+- Realiza control de calidad y filtrado de las lecturas crudas usando **Trim Galore**.  
 - Elimina bases de baja calidad, recorta adaptadores y descarta lecturas cortas o con demasiadas bases ambiguas.  
 - **Salida:** pares de lecturas filtradas  
 ```
@@ -156,7 +156,7 @@ cd ..
     ```
     nextflow run main.nf -with-docker cont_microbiota -process.maxForks 1
     ```
-3. **OPCIÓN C:** **Contendor Docker para cada proceso (tiene que tener instalado Docker).**
+3. **OPCIÓN C:** **Contendor Docker para cada proceso.** Tiene que tener instalado Docker.
     1. **Crear imagenes para cada proceso.**
     ```
     docker build . -t img_qc -f docker_img/Dockerfile.qc
