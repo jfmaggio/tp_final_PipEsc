@@ -104,7 +104,7 @@ git clone https://github.com/jfmaggio/tp_final_PipEsc.git
 ```
 cd tp_final_PipEsc/
 ```
-2. **Descarga de los indices de Bowtie para humano.** En este caso se descargará unos en particular, se puede usar el que desee el usuario. 
+2. **Descarga de los indices de Bowtie para humano.** En este caso se descargará unos en particular, se puede usar el que desee el usuario. Este paso demora, ya que descarga una base de datos.
 ```
 mkdir inputs/ref/ #Crea directorio donde se guardaran los índices
 ```
@@ -114,7 +114,6 @@ cd inputs/ref/
 ```
 wget https://genome-idx.s3.amazonaws.com/bt/GRCh38_noalt_as.zip
 ```
-Este paso demora
 ```
 unzip GRCh38_noalt_as.zip
 ```
