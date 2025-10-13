@@ -157,3 +157,19 @@ cd ..
     ```
     nextflow run main.nf -with-docker cont_microbiota -process.maxForks 1
     ```
+3. **OPCIÓN C:** **Contendor Docker para cada proceso (tiene que tener instalado Docker).**
+    1. **Crear imagenes para cada proceso.**
+    ```
+    docker build . -t img_qc -f docker_img/Dockerfile.qc
+    ```
+    ```
+    docker build . -t img_remhosp -f docker_img/Dockerfile.RemHosp
+    ```
+    ```
+    docker build . -t img_metaphlan -f docker_img/Dockerfile.metaphlan
+    ```
+    2. **Correr el pipeline.** Con el flag `-profile docker_profile`.
+    ```
+    nextflow run main.nf -profile docker_profile -process.maxForks 1
+    ```
+    
