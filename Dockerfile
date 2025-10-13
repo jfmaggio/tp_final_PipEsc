@@ -32,11 +32,11 @@ RUN conda install -y -c conda-forge mamba && \
         metaphlan=3.0 && \
     conda clean -afy
 
-# --- Base de dato
+# --- Directorio de trabajo
+WORKDIR /inputs
+    # --- Base de datos
 RUN metaphlan --install --index mpa_v30_CHOCOPhlAn_201901 --bowtie2db inputs/ref/metaphlan
 
-# --- Directorio de trabajo
-WORKDIR /data
 
 # --- Por defecto: bash ---
 CMD ["/bin/bash"]

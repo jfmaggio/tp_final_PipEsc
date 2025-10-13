@@ -147,7 +147,7 @@ cd ..
    ```
    mamba run -n microbiota_env nextflow run main.nf -process.maxForks 1
    ```
-3. **OPCIÓN B:** **Contendor Docker (tiene que tener instalado Docker)**
+3. **OPCIÓN B:** **Contendor Docker (tiene que tener instalado Docker).**
     1. **Abrir Docker Desktop.**
     2. **Crear la imagen Docker.**
     ```
