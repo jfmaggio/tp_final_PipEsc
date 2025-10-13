@@ -90,10 +90,11 @@ nextflow run main.nf --input "inputs/test/*_{1,2}.fastq.gz"
 - **MetaPhlAn3**
 
 (En el proyecto se proveen un entorno virtual Mamba y un un container Docker con todas las dependencias necesarias. Además, también la posibilidad de correr cada proceso en containers diferentes)
+
 ---
 ## Tutorial
 
 Se ejecutará la prueba usando los parámetros por defecto cuyos set de datos se encuentran en el directorio `inputs/test/` . El pipeline se puede ejecutar sin usar el entorno Mamba o contenedores Docker, pero eso requiere que las herramientas sean descargadas por el usuario.
 
-- **Clonar repositorio**
+1. **Clonar repositorio**
 
