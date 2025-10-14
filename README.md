@@ -28,11 +28,9 @@ El pipeline ejecuta los siguientes módulos:
 - Utiliza la base de datos **mpa_v30_CHOCOPhlAn_201901**.  
 - **Salida:**
 ```
-*_profile.txt
+*_profile.txt, *_bowtie2.bz2
 ```
-```
-*_bowtie2.bz2
-```
+
 
 ---
 
