@@ -5,7 +5,7 @@ Integra tres etapas principales: control de calidad de lecturas, eliminación de
 
 ---
 
-## Flujo de trabajo
+## Flujo de trabajo 
 
 El pipeline ejecuta los siguientes módulos:
 
@@ -30,7 +30,7 @@ El pipeline ejecuta los siguientes módulos:
 ```
 *_profile.txt, *_bowtie2.bz2
 ```
-
+![Flujo de trabajo](flowchart.png)
 
 ---
 
