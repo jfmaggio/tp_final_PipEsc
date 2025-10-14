@@ -122,7 +122,7 @@ cd ..
 cd ..
 ```
 
-3. **OPCIÓN A:** **Entorno Mamba (tiene que tener instalado mamba).**
+3. **OPCIÓN A:** **Entorno Mamba** (tiene que tener instalado mamba).
    1.  **Crear entorno.**  
    ```
    mamba create -n microbiota_env -f microbiota_env.yml
@@ -131,7 +131,7 @@ cd ..
    ```
     mamba activate microbiota_env
    ```
-   3. **Crear los indices MetaPhlAn3.** Demora un tiempo ya que descarga e instala la base de datos MetaPhlAn3
+   3. **Crear los indices MetaPhlAn3.** Demora un tiempo ya que descarga e instala la base de datos MetaPhlAn3.
    ```
    metaphlan --install --index mpa_v30_CHOCOPhlAn_201901 --bowtie2db inputs/ref/metaphlan
    ```
