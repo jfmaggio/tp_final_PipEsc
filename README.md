@@ -30,7 +30,7 @@ El pipeline ejecuta los siguientes módulos:
 ```
 *_profile.txt, *_bowtie2.bz2
 ```
-![Flujo de trabajo](flowchart.png)
+![Flujo de trabajo](flowchart.png "Flujo de trabajo del pipeline")
 
 ---
 
