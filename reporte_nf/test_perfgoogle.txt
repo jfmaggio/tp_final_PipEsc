@@ -1,0 +1,4 @@
+task_id	hash	native_id	name	status	exit	submit	duration	realtime	%cpu	peak_rss	peak_vmem	rchar	wchar
+1	8c/f0f6a4	nf-8cf0f6a4-1765819462561/0/nf-8cf0f6a4-176581-b365e80c-73fc-42800	FILTRADO_QC (SRR25467970)	ABORTED	-	2025-12-15 17:24:28.621	-	-	-	-	-	-	-
+2	aa/c58846	nf-aac58846-1765819462561/0/nf-aac58846-176581-92afe71f-8395-43b30	FILTRADO_QC (SRR25467978)	ABORTED	-	2025-12-15 17:24:29.274	-	-	-	-	-	-	-
+3	cf/defd95	nf-cfdefd95-1765819462561/0/nf-cfdefd95-176581-a733ae7b-765e-45810	FILTRADO_QC (SRR25467989)	ABORTED	-	2025-12-15 17:24:29.863	-	-	-	-	-	-	-

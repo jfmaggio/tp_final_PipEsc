@@ -8,3 +8,4 @@ inputs/ref
 opt/db/metaphlan
 main_viejo*
 inputs/test/**:Zone
+reporte_nf/
