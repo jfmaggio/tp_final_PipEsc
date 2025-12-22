@@ -241,7 +241,7 @@ cd ..
         +   Ubicación (Location).
         +   CUIDADO, NO editar el executor.
     
-    6. *Correr el pipeline. Ademas el ejecutor reqiere a creación de un [bucket de Google Cloud Storage](https://docs.cloud.google.com/storage/docs/creating-buckets?hl=es-419) .*
+    6. *Correr el pipeline con el flag `-profile google`. Ademas el ejecutor reqiere a creación de un [bucket de Google Cloud Storage](https://docs.cloud.google.com/storage/docs/creating-buckets?hl=es-419) .*
         ```
         nextflow run main.nf -profile google -work-dir gs://<ruta/al/bucket>/nextflow/workdir  
         ```
