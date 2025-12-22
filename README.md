@@ -169,4 +169,83 @@ cd ..
     ```
     nextflow run main.nf -profile docker_profile -process.maxForks 1
     ```
+3. **OPCIÓN D:** **Correr en Google Cluod Platform (GCP).**
+    1. *Crear instancia de Maquina Virtual (VM). Una vez creada la VM abrir una terminal e instalar Java, Nextflow y Docker*
+
+    +   Java
+    ```
+    #Actualizar la lista de paquetes
+    sudo apt update
+
+    #Instalar paquetes necesarios 
+    sudo apt install -y wget curl git
+    ```
+    ```
+    #Instalar OpenJDK 17 (Java 17)
+    sudo apt install -y openjdk-17-jdk
+
+    #Verificar la instalación de Java
+    java -version
+    ```
+    +   Nextflow  
+    ```
+    #Descargar el ejecutable de Nextflow
+    curl -s https://get.nextflow.io | bash
+
+    #Hacerlo ejecutable y moverlo al PATH del sistema
+    sudo chmod +x nextflow
+    sudo mv nextflow /usr/local/bin/
+
+    #Verificar la instalación de Nextflow
+    nextflow -version
+    ```
+    +   Git
+    ```
+    sudo apt update
+    sudo apt install git -y
+    git --version
+    ```
+    +   Docker
+    ```
+    #Actualizar y Obtener Dependencias de Docker
+    sudo apt update
+    sudo apt install ca-certificates curl gnupg lsb-release -y
+    ```    
+    ```    
+    #Agregar el Repositorio de Docker al sistema
+    sudo mkdir -p /etc/apt/keyrings
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    echo \
+    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    ```
+    ```    
+    #Instalar el Motor de Docker
+    sudo apt update
+    sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+    ```
+    ```
+    #Permitir a tu Usuario Usar Docker
+    sudo usermod -aG docker $USER
+    ```
+
+    2. *Reiniciar la terminal SSH.*
+
+    3. *Creada la VM y todo lo necesario instalado seguir los pasos 1, 2 y 5-i del tutorial.*
     
+    4. *Estas imagenes creadas hay que añadirlas a un repositorio de Artifact Registry siguiendo los pasos indicados en el siguiente [link](https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images?hl=es#console).*
+
+    5. *Editar el perfil google del `nextflow.config`  agrgando los datos necesarios para correr el pipeline.*
+        +   ID de Proyecto (PROYECT_ID).
+        +   Rutas a las imagenes (Artifact Registry).
+        +   Ubicación (Location).
+        +   CUIDADO, NO editar el executor.
+    
+    6. *Correr el pipeline. Ademas el ejecutor reqiere a creación de un [bucket de Google Cloud Storage](https://docs.cloud.google.com/storage/docs/creating-buckets?hl=es-419) .*
+        ```
+        nextflow run main.nf -profile google -work-dir gs://<ruta/al/bucket>/nextflow/workdir  
+        ```
+
+
+
+   
